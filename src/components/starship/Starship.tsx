@@ -1,5 +1,6 @@
-import { useGetStarshipByUrlQuery } from "../../store/services"
-import { StarshipVariantMini } from "./mini/StarshipMini"
+import { useGetStarshipByUrlQuery } from 'src/store/services'
+
+import { StarshipVariantMini } from './mini/StarshipMini'
 
 type Props = {
   url: string

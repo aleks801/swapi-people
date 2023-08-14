@@ -1,10 +1,11 @@
 # SWAPI People viewer
 
-
 ## Live demo
+
 Presented [here](https://glowing-cheesecake-049a23.netlify.app)
 
 ## Description
+
 This project contains 2 pages for viewing paginated people from [SWAPI](http://swapi.dev)
 
 The main page has pagination and a search by name with a debouncing mechanism.

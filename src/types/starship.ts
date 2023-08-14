@@ -1,4 +1,4 @@
-import type { BaseObj } from "./base"
+import type { BaseObj } from './base'
 
 export type Starship = BaseObj & {
   MGLT: string

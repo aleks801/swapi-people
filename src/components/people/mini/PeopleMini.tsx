@@ -1,7 +1,8 @@
-import { Card, Descriptions } from "antd"
-import type { PeopleProps } from "../types"
-import { useNavigate } from "react-router-dom"
-import { extractIdFromUrl } from "../../../utils"
+import { useNavigate } from 'react-router-dom'
+import { Card, Descriptions } from 'antd'
+
+import { extractIdFromUrl } from '../../../utils'
+import type { PeopleProps } from '../types'
 
 export const PeopleVariantMini = ({ data, isLoading }: PeopleProps) => {
   const navigate = useNavigate()

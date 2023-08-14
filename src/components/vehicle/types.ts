@@ -1,4 +1,4 @@
-import { Vehicle } from "../../types"
+import type { Vehicle } from 'src/types'
 
 export type VehicleProps = {
   data?: Vehicle

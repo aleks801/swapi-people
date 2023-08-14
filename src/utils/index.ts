@@ -1,1 +1,1 @@
-export * from "./extractIdFromUrl"
+export * from './extractIdFromUrl'

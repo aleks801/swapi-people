@@ -1,6 +1,6 @@
 export const getAbbroviation = (name: string) => {
   return name
-    .split(" ")
+    .split(' ')
     .map((item) => item[0])
-    .join("")
+    .join('')
 }

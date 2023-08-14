@@ -1,5 +1,6 @@
-import { Skeleton } from "antd"
-import type { VehicleProps } from "../types"
+import { Skeleton } from 'antd'
+
+import type { VehicleProps } from '../types'
 
 export const VehicleVariantMini = ({ data, isLoading }: VehicleProps) => {
   if (isLoading) {

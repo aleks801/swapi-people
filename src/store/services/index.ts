@@ -1,3 +1,3 @@
-export * from "./people"
-export * from "./starship"
-export * from "./vehicle"
+export * from './people'
+export * from './starship'
+export * from './vehicle'

@@ -1,9 +1,11 @@
-import swLogo from "./assets/sw-logo.svg"
-import { Route, Routes, useNavigate } from "react-router-dom"
-import PeoplePage from "./pages/people/People.tsx"
-import IndexPage from "./pages/index/Index.tsx"
-import { ConfigProvider, Layout } from "antd"
-import styles from "./App.module.scss"
+import { Route, Routes, useNavigate } from 'react-router-dom'
+import { ConfigProvider, Layout } from 'antd'
+
+import swLogo from './assets/sw-logo.svg'
+import IndexPage from './pages/index/Index.tsx'
+import PeoplePage from './pages/people/People.tsx'
+
+import styles from './App.module.scss'
 
 function App() {
   const navigate = useNavigate()
@@ -15,14 +17,14 @@ function App() {
         },
         components: {
           Layout: {
-            colorBgHeader: "#000",
+            colorBgHeader: '#000',
           },
         },
       }}
     >
       <Layout className={styles.root}>
         <Layout.Header className={styles.header}>
-          <img src={swLogo} className={styles.logo} alt="logo" onClick={() => navigate("/")} />
+          <img src={swLogo} className={styles.logo} alt="logo" onClick={() => navigate('/')} />
           <h1>People viewer</h1>
         </Layout.Header>
         <Layout.Content className={styles.content}>

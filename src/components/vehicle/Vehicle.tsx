@@ -1,5 +1,6 @@
-import { useGetVehicleByUrlQuery } from "../../store/services"
-import { VehicleVariantMini } from "./mini/VehicleMini"
+import { useGetVehicleByUrlQuery } from 'src/store/services'
+
+import { VehicleVariantMini } from './mini/VehicleMini'
 
 type Props = {
   url: string

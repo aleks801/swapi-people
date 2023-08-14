@@ -1,4 +1,4 @@
-import { BaseObj } from "./base"
+import { BaseObj } from './base'
 
 export type Vehicle = BaseObj & {
   cargo_capacity: string

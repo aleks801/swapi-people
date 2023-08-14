@@ -1,9 +1,9 @@
 export const extractIdFromUrl = (url: string) => {
   if (!url) {
-    return ""
+    return ''
   }
   return url
-    .split("/")
+    .split('/')
     .filter((e) => e)
     .pop()
 }

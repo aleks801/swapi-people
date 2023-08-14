@@ -1,8 +1,10 @@
-import { Space, Pagination, Skeleton, Row, Col } from "antd"
-import { useState } from "react"
-import { useGetAllPeopleQuery } from "../../store/services"
-import { PeopleVariantMini } from "../people/mini/PeopleMini"
-import styles from "./PeopleList.module.scss"
+import { useState } from 'react'
+import { Col, Pagination, Row, Skeleton, Space } from 'antd'
+import { useGetAllPeopleQuery } from 'src/store/services'
+
+import { PeopleVariantMini } from '../people/mini/PeopleMini'
+
+import styles from './PeopleList.module.scss'
 
 export const PeopleList = () => {
   const [page, setPage] = useState(1)

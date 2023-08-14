@@ -1,4 +1,4 @@
-import { BaseObj } from "./base"
+import { BaseObj } from './base'
 
 export type Planet = BaseObj & {
   climate: string

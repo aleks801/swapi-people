@@ -1,9 +1,9 @@
-import { Select, Spin } from "antd"
-import { useLazySearchPeopleByNameQuery } from "../../store/services"
-import debounce from "lodash.debounce"
-import { useCallback, useMemo, useRef, useState } from "react"
-import { extractIdFromUrl } from "../../utils"
-import { useNavigate } from "react-router-dom"
+import { useCallback, useMemo, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Select, Spin } from 'antd'
+import debounce from 'lodash.debounce'
+import { useLazySearchPeopleByNameQuery } from 'src/store/services'
+import { extractIdFromUrl } from 'src/utils'
 
 const debounceTimeout = 300
 
@@ -29,10 +29,10 @@ export const PeopleSearch = () => {
               ({
                 label: people.name,
                 value: extractIdFromUrl(people.url),
-              } as SelectValue),
-          ),
+              }) as SelectValue
+          )
         ),
-    [searchPeople],
+    [searchPeople]
   )
 
   const debounceFetcher = useMemo(() => {
@@ -65,7 +65,7 @@ export const PeopleSearch = () => {
       labelInValue
       filterOption={false}
       notFoundContent={fetching ? <Spin size="small" /> : null}
-      style={{ width: "100%" }}
+      style={{ width: '100%' }}
       onSearch={debounceFetcher}
       onChange={([{ value }]) => {
         navigate(`/${value}`)

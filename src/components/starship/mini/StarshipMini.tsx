@@ -1,5 +1,6 @@
-import { Skeleton } from "antd"
-import type { StarshipProps } from "../types"
+import { Skeleton } from 'antd'
+
+import type { StarshipProps } from '../types'
 
 export const StarshipVariantMini = ({ data, isLoading }: StarshipProps) => {
   if (isLoading) {
