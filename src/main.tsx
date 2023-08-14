@@ -1,10 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import React from "react"
+import ReactDOM from "react-dom/client"
+import { Provider } from "react-redux"
+import { store } from "./store"
+// import "./index.css"
+import { peopleApi } from "./store/services/people.ts"
+import App from "./App.tsx"
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+// fetch first page of people before react mounting for better ux
+store.dispatch(peopleApi.endpoints.getAllPeople.initiate(1))
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
 )
