@@ -1,6 +1,6 @@
 export type BaseObj = {
   name: string
   url: string
-  created: Date
-  edited: Date
+  created: string
+  edited: string
 }

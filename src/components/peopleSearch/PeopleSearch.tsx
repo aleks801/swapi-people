@@ -65,7 +65,7 @@ export const PeopleSearch = () => {
       labelInValue
       filterOption={false}
       notFoundContent={fetching ? <Spin size="small" /> : null}
-      style={{ width: '100%' }}
+      style={{ width: 250 }}
       onSearch={debounceFetcher}
       onChange={([{ value }]) => {
         navigate(`/${value}`)

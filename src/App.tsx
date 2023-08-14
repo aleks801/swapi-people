@@ -1,5 +1,5 @@
 import { Route, Routes, useNavigate } from 'react-router-dom'
-import { ConfigProvider, Layout } from 'antd'
+import { ConfigProvider, Layout, theme } from 'antd'
 
 import swLogo from './assets/sw-logo.svg'
 import IndexPage from './pages/index/Index.tsx'
@@ -12,6 +12,7 @@ function App() {
   return (
     <ConfigProvider
       theme={{
+        algorithm: theme.darkAlgorithm,
         token: {
           borderRadius: 4,
         },
