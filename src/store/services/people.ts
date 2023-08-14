@@ -26,6 +26,20 @@ export const peopleApi = createApi({
     getPeopleByUrl: builder.query<People, string>({
       query: (url) => url,
     }),
+    searchPeopleByName: builder.query<AllPeopleResponse, string>({
+      query: (name) => `${entityPrefix}/?search=${name}`,
+    }),
+
+    updatePeople: builder.mutation({
+      query: (initialEntry) => ({
+        url: `/history/${initialEntry.Id}`,
+        method: "PUT",
+        body: {
+          ...initialEntry,
+          date: new Date().toISOString(),
+        },
+      }),
+    }),
     // research
     getFullfilledPeopleById: builder.query<string, string>({
       queryFn: async (id, { getState }, _extraOptions, fetchWithBQ) => {
@@ -53,4 +67,4 @@ export const peopleApi = createApi({
   }),
 })
 
-export const { useGetAllPeopleQuery, useGetPeopleByIdQuery, useGetFullfilledPeopleByIdQuery } = peopleApi
+export const { useGetAllPeopleQuery, useGetPeopleByIdQuery, useGetFullfilledPeopleByIdQuery, useLazySearchPeopleByNameQuery } = peopleApi
