@@ -1,7 +1,7 @@
 import { Skeleton } from "antd"
-import type { StarshipProps } from "../types"
+import type { VehicleProps } from "../types"
 
-export const StarshipVariantMini = ({ data, isLoading }: StarshipProps) => {
+export const VehicleVariantMini = ({ data, isLoading }: VehicleProps) => {
   if (isLoading) {
     return <Skeleton.Button active />
   }

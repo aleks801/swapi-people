@@ -4,7 +4,7 @@ import type { Starship } from "./starship"
 export type People = BaseObj & {
   birth_year: string
   eye_color: string
-  gender: string
+  gender: "male" | "female" | "none"
   hair_color: string
   height: string
   mass: string
@@ -16,6 +16,6 @@ export type People = BaseObj & {
   vehicles: string[]
 }
 
-export type PeopleFullfilled = Omit<People, 'starships'> & {
+export type PeopleFullfilled = Omit<People, "starships"> & {
   starships: Starship[]
 }
