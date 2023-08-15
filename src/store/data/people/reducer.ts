@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit'
 
 import { setPeople } from './actions'
-import { State } from './types'
+import type { State } from './types'
 
 const initialState: State = {}
 

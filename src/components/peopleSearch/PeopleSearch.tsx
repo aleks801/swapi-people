@@ -1,20 +1,20 @@
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Select, Spin } from 'antd'
+import { Row, Select, Spin } from 'antd'
 import debounce from 'lodash.debounce'
 import { useLazySearchPeopleByNameQuery } from 'src/store/services'
 import { extractIdFromUrl } from 'src/utils'
 
-const debounceTimeout = 300
+import type { SelectValue } from './types'
 
-type SelectValue = {
-  label: string
-  value: string
-}
+import styles from './PeopleSearch.module.scss'
+
+const debounceTimeout = 300
 
 export const PeopleSearch = () => {
   const [searchPeople] = useLazySearchPeopleByNameQuery()
   const navigate = useNavigate()
+
   const [fetching, setFetching] = useState(false)
   const [options, setOptions] = useState<SelectValue[]>([])
   const fetchRef = useRef(0)
@@ -29,7 +29,7 @@ export const PeopleSearch = () => {
               ({
                 label: people.name,
                 value: extractIdFromUrl(people.url),
-              }) as SelectValue
+              } as SelectValue)
           )
         ),
     [searchPeople]
@@ -60,12 +60,18 @@ export const PeopleSearch = () => {
 
   return (
     <Select
+      className={styles.root}
       mode="multiple"
       placeholder="Search for people"
       labelInValue
       filterOption={false}
-      notFoundContent={fetching ? <Spin size="small" /> : null}
-      style={{ width: 250 }}
+      notFoundContent={
+        fetching ? (
+          <Row justify="center">
+            <Spin className={styles.spin} />
+          </Row>
+        ) : null
+      }
       onSearch={debounceFetcher}
       onChange={([{ value }]) => {
         navigate(`/${value}`)

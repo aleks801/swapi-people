@@ -2,9 +2,9 @@ import { Card, Col, Descriptions, Empty, Row, Spin, Typography } from 'antd'
 import { Starship } from 'src/components/starship/Starship'
 import { Vehicle } from 'src/components/vehicle/Vehicle'
 
-import { PeopleProps } from '../types'
+import type { PeopleProps } from '../types'
 
-import { MainInfo } from './MainInfo'
+import { MainInfo } from './MainInfo/MainInfo'
 
 export const PeopleVariantFull = ({ data, isLoading }: PeopleProps) => {
   if (isLoading) {
@@ -18,12 +18,12 @@ export const PeopleVariantFull = ({ data, isLoading }: PeopleProps) => {
   const { starships, vehicles } = data
 
   return (
-    <Row gutter={8}>
-      <Col span={16}>
+    <Row gutter={[16, 16]}>
+      <Col xs={24} md={16}>
         <MainInfo {...data} />
       </Col>
-      <Col span={8}>
-        <Row gutter={[8, 8]}>
+      <Col xs={24} md={8}>
+        <Row gutter={[16, 16]}>
           <Col>
             <Card>
               <Descriptions column={1} title={<Typography>Starships</Typography>}>

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Card, Descriptions } from 'antd'
+import { Card, Descriptions, Skeleton } from 'antd'
 
 import { extractIdFromUrl } from '../../../utils'
 import type { PeopleProps } from '../types'
@@ -8,7 +8,15 @@ export const PeopleVariantMini = ({ data, isLoading }: PeopleProps) => {
   const navigate = useNavigate()
 
   if (isLoading) {
-    return <Card loading size="small" />
+    return (
+      <Card size="small">
+        <Descriptions column={1} size="small">
+          <Descriptions.Item>
+            <Skeleton active />
+          </Descriptions.Item>
+        </Descriptions>
+      </Card>
+    )
   }
 
   if (!data) {

@@ -18,7 +18,7 @@ function App() {
         },
         components: {
           Layout: {
-            colorBgHeader: '#000',
+            // colorBgHeader: '#000',
           },
         },
       }}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Avatar, Card, Col, Descriptions, Input, Row } from 'antd'
+import { Avatar, Card, Col, Descriptions, Row, Typography } from 'antd'
 import useTypedDispatch from 'src/hooks/useTypedDispatch'
 import useTypedSelector from 'src/hooks/useTypedSelector'
 import { setPeople } from 'src/store/data/people'
@@ -7,7 +7,11 @@ import { selectPeople } from 'src/store/data/people/selectors'
 import type { PlainPeople } from 'src/types'
 import { CheckOutlined, EditOutlined } from '@ant-design/icons'
 
-import { getAbbroviation } from './utils'
+import { getAbbroviation } from '../utils'
+
+import { EditableField } from './EditableField'
+
+import styles from './MainInfo.module.scss'
 
 const Item = Descriptions.Item
 
@@ -45,33 +49,54 @@ export const MainInfo = (data: PlainPeople) => {
         column={2}
         title={
           <Row justify="space-between">
-            <Col>{name}</Col>
-            <Col style={{ cursor: 'pointer' }} onClick={() => setEdit((prev) => !prev)}>
+            <Col>
+              <Typography.Title level={3} className={styles.title}>
+                {name}
+              </Typography.Title>
+            </Col>
+            <Col className={styles.editIcon} onClick={() => setEdit((prev) => !prev)}>
               {edit ? <CheckOutlined /> : <EditOutlined />}
             </Col>
           </Row>
         }
       >
         <Item span={2}>
-          <Avatar shape="square" size={60} style={{ background: '#c8b71c' }}>
+          <Avatar shape="square" size={60} className={styles.avatar}>
             {getAbbroviation(name)}
           </Avatar>
         </Item>
         <Item span={2} label="Gender">
-          {edit ? <Input size="small" value={editablePeople.gender} onChange={onChangeEditableProp('gender')} /> : gender}
+          <EditableField edit={edit} value={gender} editValue={editablePeople.gender} onChange={onChangeEditableProp('gender')} />
         </Item>
         <Item label="Skin color">
-          {edit ? <Input size="small" value={editablePeople.skin_color} onChange={onChangeEditableProp('skin_color')} /> : skin_color}
+          <EditableField
+            edit={edit}
+            value={skin_color}
+            editValue={editablePeople.skin_color}
+            onChange={onChangeEditableProp('skin_color')}
+          />
         </Item>
         <Item label="Hair color">
-          {edit ? <Input size="small" value={editablePeople.hair_color} onChange={onChangeEditableProp('hair_color')} /> : hair_color}
+          <EditableField
+            edit={edit}
+            value={hair_color}
+            editValue={editablePeople.hair_color}
+            onChange={onChangeEditableProp('hair_color')}
+          />
         </Item>
         <Item span={2} label="Eye color">
-          {edit ? <Input size="small" value={editablePeople.eye_color} onChange={onChangeEditableProp('eye_color')} /> : eye_color}
+          <EditableField edit={edit} value={eye_color} editValue={editablePeople.eye_color} onChange={onChangeEditableProp('eye_color')} />
         </Item>
-        <Item label="Mass">{edit ? <Input size="small" value={editablePeople.mass} onChange={onChangeEditableProp('mass')} /> : mass}</Item>
+        <Item label="Mass">
+          <EditableField edit={edit} value={mass} editValue={editablePeople.mass} onChange={onChangeEditableProp('mass')} />
+        </Item>
         <Item label="Birth year">
-          {edit ? <Input size="small" value={editablePeople.birth_year} onChange={onChangeEditableProp('birth_year')} /> : birth_year}
+          <EditableField
+            edit={edit}
+            value={birth_year}
+            editValue={editablePeople.birth_year}
+            onChange={onChangeEditableProp('birth_year')}
+          />
         </Item>
       </Descriptions>
     </Card>
