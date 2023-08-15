@@ -2,8 +2,8 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 import { ConfigProvider, Layout, theme } from 'antd'
 
 import swLogo from './assets/sw-logo.svg'
-import IndexPage from './pages/index/Index.tsx'
-import PeoplePage from './pages/people/People.tsx'
+import IndexPage from './pages/Index'
+import PeoplePage from './pages/People'
 
 import styles from './App.module.scss'
 
