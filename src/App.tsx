@@ -1,5 +1,5 @@
 import { Route, Routes, useNavigate } from 'react-router-dom'
-import { ConfigProvider, Layout, theme } from 'antd'
+import { ConfigProvider, Layout, theme, Typography } from 'antd'
 
 import swLogo from './assets/sw-logo.svg'
 import IndexPage from './pages/Index'
@@ -9,6 +9,7 @@ import styles from './App.module.scss'
 
 function App() {
   const navigate = useNavigate()
+
   return (
     <ConfigProvider
       theme={{
@@ -16,17 +17,14 @@ function App() {
         token: {
           borderRadius: 4,
         },
-        components: {
-          Layout: {
-            // colorBgHeader: '#000',
-          },
-        },
       }}
     >
       <Layout className={styles.root}>
         <Layout.Header className={styles.header}>
           <img src={swLogo} className={styles.logo} alt="logo" onClick={() => navigate('/')} />
-          <h1>People viewer</h1>
+          <Typography.Title level={3} className={styles.title}>
+            People viewer
+          </Typography.Title>
         </Layout.Header>
         <Layout.Content className={styles.content}>
           <Routes>

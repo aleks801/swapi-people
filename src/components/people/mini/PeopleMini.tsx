@@ -24,6 +24,7 @@ export const PeopleVariantMini = ({ data, isLoading }: PeopleProps) => {
   }
 
   const { name, gender, url, skin_color, mass } = data
+
   return (
     <Card title={name} hoverable size="small" onClick={() => navigate(`/${extractIdFromUrl(url)}`)}>
       <Descriptions column={1} size="small">

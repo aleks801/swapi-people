@@ -5,8 +5,11 @@
 .header {
   display: flex;
   gap: 16px;
-  color: #ffe820;
   align-items: center;
+  .title {
+    color: #ffe820;
+    margin: 0;
+  }
 }
 
 .logo {
