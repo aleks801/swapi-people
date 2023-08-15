@@ -27,17 +27,6 @@ export const peopleApi = createApi({
     searchPeopleByName: builder.query<AllPeopleResponse, string>({
       query: (name) => `${entityPrefix}/?search=${name}`,
     }),
-
-    updatePeople: builder.mutation({
-      query: (initialEntry) => ({
-        url: `/history/${initialEntry.Id}`,
-        method: 'PUT',
-        body: {
-          ...initialEntry,
-          date: new Date().toISOString(),
-        },
-      }),
-    }),
   }),
 })
 
