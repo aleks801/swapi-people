@@ -60,15 +60,15 @@ export const MainInfo = (data: PlainPeople) => {
           </Row>
         }
       >
-        <Item span={2}>
+        <Item span={2} labelStyle={{ alignItems: 'center' }}>
           <Avatar shape="square" size={60} className={styles.avatar}>
             {getAbbroviation(name)}
           </Avatar>
         </Item>
-        <Item span={2} label="Gender">
+        <Item span={2} label="Gender" labelStyle={{ alignItems: 'center' }}>
           <EditableField edit={edit} value={gender} editValue={editablePeople.gender} onChange={onChangeEditableProp('gender')} />
         </Item>
-        <Item label="Skin color">
+        <Item label="Skin color" labelStyle={{ alignItems: 'center' }}>
           <EditableField
             edit={edit}
             value={skin_color}
@@ -76,7 +76,7 @@ export const MainInfo = (data: PlainPeople) => {
             onChange={onChangeEditableProp('skin_color')}
           />
         </Item>
-        <Item label="Hair color">
+        <Item label="Hair color" labelStyle={{ alignItems: 'center' }}>
           <EditableField
             edit={edit}
             value={hair_color}
@@ -84,13 +84,13 @@ export const MainInfo = (data: PlainPeople) => {
             onChange={onChangeEditableProp('hair_color')}
           />
         </Item>
-        <Item span={2} label="Eye color">
+        <Item span={2} label="Eye color" labelStyle={{ alignItems: 'center' }}>
           <EditableField edit={edit} value={eye_color} editValue={editablePeople.eye_color} onChange={onChangeEditableProp('eye_color')} />
         </Item>
-        <Item label="Mass">
+        <Item label="Mass" labelStyle={{ alignItems: 'center' }}>
           <EditableField edit={edit} value={mass} editValue={editablePeople.mass} onChange={onChangeEditableProp('mass')} />
         </Item>
-        <Item label="Birth year">
+        <Item label="Birth year" labelStyle={{ alignItems: 'center' }}>
           <EditableField
             edit={edit}
             value={birth_year}
