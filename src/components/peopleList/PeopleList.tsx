@@ -8,6 +8,8 @@ import { PeopleVariantMini } from '../people/mini/PeopleMini'
 
 import styles from './PeopleList.module.scss'
 
+const pageSize = 10
+
 export const PeopleList = () => {
   const storedPeople = useTypedSelector(selectPeople)
   const [page, setPage] = useState(1)
@@ -35,7 +37,7 @@ export const PeopleList = () => {
         <Pagination
           disabled={isFetching}
           showSizeChanger={false}
-          pageSize={10}
+          pageSize={pageSize}
           current={page}
           onChange={(page) => setPage(page)}
           total={data?.count}

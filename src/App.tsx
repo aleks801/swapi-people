@@ -4,6 +4,7 @@ import { ConfigProvider, Layout, theme, Typography } from 'antd'
 import swLogo from './assets/sw-logo.svg'
 import IndexPage from './pages/Index'
 import PeoplePage from './pages/People'
+import { routes } from './routes'
 
 import styles from './App.module.scss'
 
@@ -21,15 +22,15 @@ function App() {
     >
       <Layout className={styles.root}>
         <Layout.Header className={styles.header}>
-          <img src={swLogo} className={styles.logo} alt="logo" onClick={() => navigate('/')} />
+          <img src={swLogo} className={styles.logo} alt="logo" onClick={() => navigate(routes.index)} />
           <Typography.Title level={3} className={styles.title}>
             People viewer
           </Typography.Title>
         </Layout.Header>
         <Layout.Content className={styles.content}>
           <Routes>
-            <Route path="/" element={<IndexPage />} />
-            <Route path="/:peopleId" element={<PeoplePage />} />
+            <Route path={routes.index} element={<IndexPage />} />
+            <Route path={routes.peoplePage} element={<PeoplePage />} />
           </Routes>
         </Layout.Content>
 
